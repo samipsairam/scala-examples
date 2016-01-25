@@ -9,11 +9,12 @@ object SimpleApp {
     val conf = new SparkConf()
         .setMaster("local")
         .setAppName("AppLoadCassandra")
+        .set("spark.app.id", "SparkLoadCax")
         .set("spark.cassandra.connection.host", "192.168.99.100")
         .setJars(List("target/scala-2.11/simple-project_2.11-1.0.jar"))
         .setSparkHome("/opt/sdata/spark/current")
     val sc = new SparkContext(conf)
-    val myrdd = sc.cassandraTable("keyspace_name", "table_name")
+    val myrdd = sc.cassandraTable("ks1", "src_trans")
     println("********READ!!!!!!!")
     println("********Count rows: %s".format(myrdd.count()))
 

@@ -17,3 +17,4 @@
 .scala_dependencies
 .worksheet
 
+**/project/target
