@@ -2,7 +2,8 @@ lazy val root = (project in file(".")).
   settings(
     name := "fat-jar",
     version := "1.0",
-    scalaVersion := "2.11.7"
+    scalaVersion := "2.11.7",
+    organization := "org.sws9f"
 )
 
 // for logging library
