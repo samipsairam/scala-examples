@@ -1,0 +1,2 @@
+sbt "runMain org.sws9f.sparksample.S04LoadCsv"
+

@@ -4,3 +4,6 @@ lazy val root = (project in file(".")).
     version := "1.0",
     scalaVersion := "2.11.7"
   )
+
+retrieveManaged := true
+
