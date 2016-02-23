@@ -2,7 +2,8 @@ package org.sws9f.sparkcalc
 
 import org.apache.spark.{Logging, SparkContext, SparkConf}
 import org.apache.spark.SparkContext._
-import com.datastax.spark.connector._
+import org.apache.spark.sql.SQLContext
+// import com.datastax.spark.connector._
 
 trait BaseApp extends App with Logging {
 
@@ -20,6 +21,7 @@ trait BaseApp extends App with Logging {
 
   // Connect to the Spark cluster:
   lazy val sc = new SparkContext(conf)
+  lazy val sqlContext = new SQLContext(sc)
 }
 
 object BaseApp {

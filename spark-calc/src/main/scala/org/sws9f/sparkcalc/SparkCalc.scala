@@ -51,13 +51,13 @@ object SparkCalc extends BaseApp {
 
 case class Tranx(uid: String, date: Date, c1: String, c2: String, c3: String, sid: String, payment: Double)
 
-class SparkApp extends BaseApp {
+object SparkApp extends BaseApp {
   // def getSc() : SparkContext = {
   //   val mysc = BaseApp().sc
   //   return mysc
   // }
 //  def sc = BaseApp().sc
-  def sqlContext = new SQLContext(sc)
+//  def sqlContext = new SQLContext(sc)
 }
 
 /*

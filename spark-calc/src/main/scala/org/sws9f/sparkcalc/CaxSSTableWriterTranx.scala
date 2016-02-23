@@ -6,9 +6,13 @@ import scala.collection.JavaConversions._
 import com.github.tototoshi.csv._
 import java.time.LocalDate
 import scalax.file.Path
-import com.typesafe.scalalogging.LazyLogging
+//import com.typesafe.scalalogging.LazyLogging
+import grizzled.slf4j.Logger
 
-object CaxSSTableWriterTranx extends App with LazyLogging {
+//object CaxSSTableWriterTranx extends App with LazyLogging {
+object CaxSSTableWriterTranx extends App {
+  
+  val logger = Logger[this.type]
   
   val conf = ConfigFactory.load()
   val settingSchema = conf.getString("cax-db.schema").stripMargin

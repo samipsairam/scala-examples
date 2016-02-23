@@ -2,20 +2,25 @@ name := "SparkCalculator"
 
 version := "1.0"
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.10.6"
+
+mainClass in (Compile, run) := Some("org.sws9f.sparkcalc.SparkBase")
 
 // Spark
 libraryDependencies += "org.apache.spark" %% "spark-core" % "1.6.0" exclude ("log4j", "log4j") exclude ("org.slf4j", "slf4j-log4j12")
+libraryDependencies += "org.apache.spark" %% "spark-hive" % "1.6.0" exclude ("log4j", "log4j") exclude ("org.slf4j", "slf4j-log4j12") exclude ("log4j", "apache-log4j-extras")
+
 
 // Cassandra
 libraryDependencies += "org.apache.cassandra" % "cassandra-all" % "3.0.2"
 libraryDependencies += "com.datastax.cassandra" % "cassandra-driver-core" % "3.0.0-rc1"
-libraryDependencies += "com.datastax.spark" % "spark-cassandra-connector_2.11" % "1.5.0-RC1"
+libraryDependencies += "com.datastax.spark" %% "spark-cassandra-connector" % "1.5.0-RC1"
 
 // utility : CSV
 libraryDependencies += "com.github.tototoshi" %% "scala-csv" % "1.2.2"
 // utility : Logging
-libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0"
+// libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.1.0"
+libraryDependencies += "org.clapper" %% "grizzled-slf4j" % "1.0.2"
 
 // utility : Config
 libraryDependencies += "com.typesafe" % "config" % "1.3.0"
